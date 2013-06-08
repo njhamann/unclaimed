@@ -1,0 +1,92 @@
+body{
+    margin: 60px 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family:"freight-sans-pro","Myriad Pro","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+    margin-bottom:0;
+    font-weight: 700;
+}
+
+h1#title{
+    font-size: 52px;
+    line-height: 1;
+    margin:0 0 30px 0;
+}
+
+div#body{
+    margin-bottom:40px;
+}
+
+div#body h3{
+    font-size: 26px;
+    line-height:30px;
+}
+
+div#body h4{
+    font-size: 22px;
+    line-height: 24px;
+}
+
+p, div#body{
+    font-family: "ff-tisa-web-pro",Georgia,Cambria,"Times New Roman",Times,serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.45;
+    color:#333333;
+}
+div#body p{
+    margin-bottom:0;
+}
+p.description{
+    font-family: "ff-tisa-web-pro",Georgia,Cambria,"Times New Roman",Times,serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #666665;
+    word-wrap: break-word;
+    margin-bottom:10px;
+}
+
+.span9 h1, .span9 p{
+    margin-right:40px;
+
+}
+
+.container-narrow {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+p, h1, div, .medium-editor-toolbar-form-anchor input{
+    outline: none;
+    border:none !important;
+    box-shadow:none !important;
+}
+.medium-editor-toolbar-form-anchor input{
+    margin:9px;
+}
+a.btn{
+    box-shadow: none;
+    background: #EEE;
+    border: none;
+    border-bottom:2px solid #CCC;
+}
+a.btn.btn-primary{
+    box-shadow: none;
+    background: #57ad68;
+    border: none;
+    border-bottom:2px solid #208434;
+}
+blockquote{
+margin: 0 0 20px 15px
+}
+a.medium-editor-button-active.first{
+    border-radius: 5px 0px 0px 5px;
+    
+}
+a.medium-editor-button-active.last{
+    border-radius: 0px 5px 5px;
+    
+}
