@@ -8,10 +8,22 @@ h1, h2, h3, h4, h5, h6{
     font-weight: 700;
 }
 
-h1#title{
+h1#title, h1.placeholder{
     font-size: 52px;
     line-height: 1;
     margin:0 0 30px 0;
+    position:relative;
+}
+
+h1.placeholder{
+    top:0;
+    left:0;
+    position:absolute;
+    color:#CCC;
+}
+
+.field-container{
+    position:relative;
 }
 
 div#body{
@@ -28,23 +40,36 @@ div#body h4{
     line-height: 24px;
 }
 
-p, div#body{
+p, div#body, div#b_placeholder{
+    position:relative;
     font-family: "ff-tisa-web-pro",Georgia,Cambria,"Times New Roman",Times,serif;
     font-weight: 400;
     font-size: 22px;
     line-height: 1.45;
     color:#333333;
 }
+
+div#b_placeholder{
+    top:0;
+    left:0;
+    position:absolute;
+}
+
+div#b_placeholder p{
+    color: #CCC;
+}
+
 div#body p{
     margin-bottom:0;
 }
 p.description{
+    text-align:center;
     font-family: "ff-tisa-web-pro",Georgia,Cambria,"Times New Roman",Times,serif;
     font-weight: 400;
     font-style: italic;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.4;
-    color: #666665;
+    color: #777;
     word-wrap: break-word;
     margin-bottom:10px;
 }
@@ -53,7 +78,6 @@ p.description{
     margin-right:40px;
 
 }
-
 .container-narrow {
     margin: 0 auto;
     max-width: 800px;
@@ -89,4 +113,16 @@ a.medium-editor-button-active.first{
 a.medium-editor-button-active.last{
     border-radius: 0px 5px 5px;
     
+}
+
+@media (max-width: 767px) {
+    .span9 h1, .span9 p{
+        margin-right:0px;
+
+    }
+    h1#title, h1#t_placeholder{
+        font-size: 29px;
+        line-height: 1.2;
+        margin-bottom:10px;
+    }
 }

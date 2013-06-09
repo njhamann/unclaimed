@@ -1,4 +1,5 @@
-angular.module('noone', [], function($routeProvider, $locationProvider) {
+//app
+var app = angular.module('unclaimed', [], function($routeProvider, $locationProvider) {
     
     $routeProvider.when('/', {
         templateUrl: '/templates/index.html',
@@ -18,11 +19,27 @@ angular.module('noone', [], function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
 });
 
+//directives
+app.directive('customPlaceholder', function() {
+    return function(scope, el, attrs){
+        $(el).on('keydown, keyup', function(e){
+            if(!$(this).text()){
+                $('#'+attrs.customPlaceholder).show();
+            }else{
+                $('#'+attrs.customPlaceholder).hide();
+            }
+        });
+        console.log('customPlaceholder');
+    };
+});
+
+//controllers
 function IndexCntl($scope, $route, $routeParams, $location){
     $scope.$route = $route;
     $scope.$location = $location;
     $scope.$routeParams = $routeParams;
 }
+
 
 function NewCntl($scope, $http){
 
@@ -41,6 +58,7 @@ function NewCntl($scope, $http){
     };
 
 }
+
 
 function PostCntl($scope, $routeParams, $http){
 

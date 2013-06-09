@@ -1,15 +1,19 @@
-<div class="container-narrow">
+<div class="container-narrow" ng-form>
     <div class="row-fluid">
-        <div class="span9">
-            <h1 id="title" contenteditable="true">Start your story</h1>
+        <div class="span9 field-container">
+            <h1 id="t_placeholder" class="placeholder">Type your title</h1>
+            <h1 id="title" class="empty" contenteditable="true" custom-placeholder="t_placeholder"></h1>
         </div>
         <div class="span3"></div>
     </div>
     <div class="row-fluid">
-        <div class="span9">
-            <div id="body" contenteditable="true" class="medium-toolbar">
-                <p>Click here to start writing. noone is about being completely free to write anything without any judgment. When you are finish hit save and this page will be permanently saved. It will never be taken down and will never be linked to you.</p>
+        <div class="span9 field-container">
+
+            <div id="b_placeholder">
+                <p>Type your post</p>
             </div>
+            <div id="body" contenteditable="true" class="medium-toolbar pristine"
+                custom-placeholder="b_placeholder"></div>
             <a id="save" href="#" class="btn btn-primary"
                 ng-click="save()">Publish</a>
         </div>
