@@ -6,12 +6,14 @@
     <div class="span3"></div>
   </div>
   <div class="row-fluid">
-    <div class="span9">
-      <div id="body" ng-bind-html-unsafe="post.body"></div>
+    <div class="span9 main-body-container">
+        <div id="body" ng-bind-html-unsafe="post.body"></div>
+        <p class="remix-footer" ng-show="post.remix_id">This post is a remix. <a href="/{{post.remix_id}}">View Original</a></p>
     </div>
     <div class="span3">
       <p class="description">Welcome to Unclaimed. No account needed and your post will be completely anonymous.</p>
       <a href="/new" class="btn btn-block">Create a post</a>
+      <a href="/new/{{postId}}" class="btn btn-block">Remix this post</a>
     </div>
   </div>
 </div>
