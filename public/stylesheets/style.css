@@ -83,7 +83,14 @@ p.description{
     margin-right:40px;
 
 }
+.view-container{
+    top:0;
+    position:absolute;
+    width:100%;
+}
 .container-narrow {
+    position:relative;
+    top:0px;
     margin: 0 auto;
     max-width: 840px;
     padding: 0 20px;
@@ -124,6 +131,32 @@ a.medium-editor-button-active.last{
     font-style:italic;
     margin-top:15px;
 }
+
+.animate-enter, .animate-leave {
+    -webkit-transition: .3s linear all; /* Safari/Chrome */
+    -moz-transition: .3s linear all; /* Firefox */
+    -ms-transition: .3s linear all; /* IE10 */
+    -o-transition: .3s linear all; /* Opera */
+    transition: .3s linear all; /* Future Browsers */
+}
+
+.animate-enter{
+    opacity: 0;
+}
+.animate-leave{
+    opacity: 1;
+}
+ 
+.animate-enter.animate-enter-active {
+ /* The animation code itself */
+    opacity: 1;
+}
+
+.animate-leave.animate-leave-active {
+ /* The animation code itself */
+    opacity: 0;
+}
+
 @media (max-width: 767px) {
     .span9 h1, .span9 p{
         margin-right:0px;
@@ -147,3 +180,4 @@ a.medium-editor-button-active.last{
         padding: 0;
     }
 }
+

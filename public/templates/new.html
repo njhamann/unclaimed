@@ -1,26 +1,30 @@
-<div class="container-narrow" ng-form>
-    <input type="hidden" id="remix_id" name="remix_id" value="{{postId}}" />
-    <div class="row-fluid">
-        <div class="span9 field-container">
-            <h1 id="t_placeholder" class="placeholder">Type your title</h1>
-            <h1 id="title" class="empty" contenteditable="true" 
-                ng-bind-html-unsafe="post.title"
-                custom-placeholder="t_placeholder"></h1>
-        </div>
-        <div class="span3"></div>
-    </div>
-    <div class="row-fluid">
-        <div class="span9 field-container">
-
-            <div id="b_placeholder">
-                <p>Type your post</p>
+<div class="container-narrow">
+    <div class="view-container" ng-form>
+        <input type="hidden" id="remix_id" name="remix_id" value="{{postId}}" />
+        <div class="row-fluid">
+            <div class="span9 field-container">
+                <h1 id="t_placeholder" class="placeholder">Type your title</h1>
+                <h1 id="title" class="empty" contenteditable="true" 
+                    set-focus
+                    ng-bind-html-unsafe="post.title"
+                    custom-placeholder="t_placeholder"></h1>
             </div>
-            <div id="body" contenteditable="true" class="medium-toolbar pristine"
-                ng-bind-html-unsafe="post.body"
-                custom-placeholder="b_placeholder"></div>
-            <a id="save" href="#" class="btn btn-primary"
-                ng-click="save()">Publish</a>
+            <div class="span3"></div>
         </div>
-        <div class="span3"></div>
+        <div class="row-fluid">
+            <div class="span9 field-container">
+
+                <div id="b_placeholder">
+                    <p>Type your post</p>
+                </div>
+                <div id="body" contenteditable="true" class="medium-toolbar pristine"
+                    wysiwyg-control
+                    ng-bind-html-unsafe="post.body"
+                    custom-placeholder="b_placeholder"></div>
+                <a id="save" href="#" class="btn btn-primary"
+                    ng-click="save()">Publish</a>
+            </div>
+            <div class="span3"></div>
+        </div>
     </div>
 </div>

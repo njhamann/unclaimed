@@ -8,6 +8,7 @@ var express = require('express')
   , api = require('./routes/api')
   , http = require('http')
   , mongoose = require('mongoose')
+  , expressValidator = require('express-validator')
   , path = require('path');
 
 var app = express();
@@ -27,6 +28,7 @@ app.set('view engine', 'jade');
 app.use(express.favicon(__dirname + '/public/images/favicon.ico')); 
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
+app.use(expressValidator);
 app.use(express.methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);

@@ -25,9 +25,20 @@ var app = angular.module('unclaimed', [], function($routeProvider, $locationProv
 });
 
 //directives
+app.directive('setFocus', function() {
+    return function(scope, el, attrs){
+        $(el).focus();
+    };
+});
+
+app.directive('wysiwygControl', function() {
+    return function(scope, el, attrs){
+        var editor = new MediumEditor('#'+attrs.id);
+    };
+});
+
 app.directive('customPlaceholder', function() {
     return function(scope, el, attrs){
-    
         $(el).on('keydown keyup', function(e){
             $('#'+attrs.customPlaceholder).hide();
         });
@@ -43,6 +54,7 @@ app.directive('customPlaceholder', function() {
     };
 });
 
+
 //controllers
 function IndexCntl($scope, $route, $routeParams, $location){
     $scope.$route = $route;
@@ -52,28 +64,22 @@ function IndexCntl($scope, $route, $routeParams, $location){
 
 
 function NewCntl($scope, $http, $location){
-
-    var editor = new MediumEditor('.medium-toolbar');
-    $('#title').focus();
     $scope.url = '/api/save';
     $scope.save = function(){
         var postData = {};
         postData.title = document.getElementById('title').innerHTML;
         postData.body = document.getElementById('body').innerHTML;
         $http.post($scope.url, postData).success(function(d) {
-            $location.path('/'+d.id);
+            if(d.success){
+                $location.path('/'+d.id);
+            }
         }).error(function(e) {                                     
             console.log('error');
         });                                                        
     };
-
 }
 
 function NewReboundCntl($scope, $http, $location, $routeParams){
-
-    var editor = new MediumEditor('.medium-toolbar');
-    $('#title').focus();
-    
     $scope.getUrl = '/api/get/'+$routeParams.id;
     $scope.postId = $routeParams.id;
     $http.get($scope.getUrl).success(function(d) {
@@ -90,12 +96,13 @@ function NewReboundCntl($scope, $http, $location, $routeParams){
         postData.title = document.getElementById('title').innerHTML;
         postData.body = document.getElementById('body').innerHTML;
         $http.post($scope.saveUrl, postData).success(function(d) {
-            $location.path('/'+d.id);
+            if(d.success){
+                $location.path('/'+d.id);
+            }
         }).error(function(e) {                                     
             console.log('error');
         });                                                        
     };
-
 }
 
 function PostCntl($scope, $routeParams, $http){
